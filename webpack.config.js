@@ -7,7 +7,7 @@ module.exports = (webpackEnv, webpackArgv) => ({
   mode: webpackArgv.mode,
   output: {
     path: path.join(__dirname, "/build"),
-    filename: "devblog.js",
+    filename: webpackArgv.mode === "production" ? "[name].[contenthash:8].chunk.js" : "status.js",
   },
   ...(webpackArgv.mode === "development"
     ? {
@@ -22,6 +22,7 @@ module.exports = (webpackEnv, webpackArgv) => ({
     port: 3000,
     liveReload: true,
     host: "localhost",
+    historyApiFallback: true,
     open: true,
     client: {
       overlay: true,
@@ -41,6 +42,10 @@ module.exports = (webpackEnv, webpackArgv) => ({
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [{ loader: "file-loader" }],
       },
     ],
   },

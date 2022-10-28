@@ -1,5 +1,5 @@
 {
-  "name": "devblog.frontend",
+  "name": "status.frontend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -35,7 +35,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "styled-components": "^5.3.6"
   },
   "description": ""
 }

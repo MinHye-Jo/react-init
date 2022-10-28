@@ -10,7 +10,7 @@ export const Routes = () => {
       <Route path="/" element={<Main />} />
       <Route path="/sub" element={<Sub />} />
       {/* 일치하는 경로 없을 경우 메인으로 */}
-      <Route path="*" element={<Navigate replace to="/main" />} />
+      <Route path="*" element={<Navigate replace to="/" />} />
     </ReactRouterRoutes>
   );
 };
